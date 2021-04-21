@@ -9,22 +9,23 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.fico.entity.TipoDeTarjeta;
-import pe.fico.dao.ITipoDeTarjetaDao;
+import pe.fico.dao.ITarjetaDao;
+import pe.fico.entity.Tarjeta;
 
-public class TipoDeTarjetaDaoImpl implements ITipoDeTarjetaDao, Serializable{
-	
+
+public class TarjetaDaoImpl implements ITarjetaDao, Serializable{
+
 	private static final long serialVersionUID = 1L;
 	
 	@PersistenceContext(unitName = "a")
 	private EntityManager em;
-
+	
 	@Transactional
 	@Override
-	public void insertar(TipoDeTarjeta tipo) {
+	public void insertar(Tarjeta tarjeta) {
 		// TODO Auto-generated method stub
 		try {
-			em.persist(tipo);
+			em.persist(tarjeta);
 		}
 		catch(Exception ex) {
 			System.out.println(ex.getMessage());
@@ -33,12 +34,11 @@ public class TipoDeTarjetaDaoImpl implements ITipoDeTarjetaDao, Serializable{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<TipoDeTarjeta> listar() {
-		// TODO Auto-generated method stub
-		List<TipoDeTarjeta> lista = new ArrayList<TipoDeTarjeta>();
+	public List<Tarjeta> listar() {
+		List<Tarjeta> lista = new ArrayList<Tarjeta>();
 		try {
-			Query q = em.createQuery("select tdt from TipoDeTarjeta tdt");
-			lista = (List<TipoDeTarjeta>) q.getResultList();
+			Query q = em.createQuery("select t from Tarjeta t");
+			lista = (List<Tarjeta>) q.getResultList();
 		}
 		catch(Exception ex) {
 			System.out.println(ex.getMessage());
@@ -48,18 +48,16 @@ public class TipoDeTarjetaDaoImpl implements ITipoDeTarjetaDao, Serializable{
 
 	@Transactional
 	@Override
-	public void eliminar(int CTipo) {
+	public void eliminar(String CTarjeta) {
 		// TODO Auto-generated method stub
-		TipoDeTarjeta tip = new TipoDeTarjeta();
+		Tarjeta tar = new Tarjeta();
 		try {
-			tip = em.getReference(TipoDeTarjeta.class,CTipo);
-			em.remove(tip);
+			tar = em.getReference(Tarjeta.class,CTarjeta);
+			em.remove(tar);
 		}
 		catch(Exception ex) {
 			System.out.println(ex.getMessage());
-		}				
+		}	
 	}
-	
-	
-	
+
 }

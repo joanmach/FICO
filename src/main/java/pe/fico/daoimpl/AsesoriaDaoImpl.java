@@ -27,7 +27,7 @@ public class AsesoriaDaoImpl implements IAsesoriaDao, Serializable{
 	@Override
 	public List<Asesoria> listar() {
 		List<Asesoria> lista = new ArrayList<Asesoria>();
-		Query q = em.createQuery("select cl from Asesoria cl");
+		Query q = em.createQuery("select as from Asesoria as");
 		lista = (List<Asesoria>) q.getResultList();
 		return lista;
 	}
