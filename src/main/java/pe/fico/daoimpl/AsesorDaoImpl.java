@@ -28,7 +28,7 @@ public class AsesorDaoImpl implements IAsesorDao, Serializable{
 	@Override
 	public List<Asesor> listar() {
 		List<Asesor> lista = new ArrayList<Asesor>();
-		Query q = em.createQuery("select cl from Asesor cl");
+		Query q = em.createQuery("select asr from Asesor asr");
 		lista = (List<Asesor>) q.getResultList();
 		return lista;
 	}
