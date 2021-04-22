@@ -23,6 +23,33 @@ public class TipoDeTarjeta implements Serializable{
 	@Column(name="NTipo", nullable=false, length=30)
 	private String NTipo;
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + CTipo;
+		result = prime * result + ((NTipo == null) ? 0 : NTipo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TipoDeTarjeta other = (TipoDeTarjeta) obj;
+		if (CTipo != other.CTipo)
+			return false;
+		if (NTipo == null) {
+			if (other.NTipo != null)
+				return false;
+		} else if (!NTipo.equals(other.NTipo))
+			return false;
+		return true;
+	}
 
 	public TipoDeTarjeta() {
 		super();
