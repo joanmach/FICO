@@ -48,5 +48,33 @@ public class Pais implements Serializable {
 	public void setNombrePais(String nombrePais) {
 		this.nombrePais = nombrePais;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idPais;
+		result = prime * result + ((nombrePais == null) ? 0 : nombrePais.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pais other = (Pais) obj;
+		if (idPais != other.idPais)
+			return false;
+		if (nombrePais == null) {
+			if (other.nombrePais != null)
+				return false;
+		} else if (!nombrePais.equals(other.nombrePais))
+			return false;
+		return true;
+	}
 	
 }

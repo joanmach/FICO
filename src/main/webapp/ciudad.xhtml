@@ -31,8 +31,9 @@
 				value="#{ciudadController.ciudad.nombreCiudad}" maxlength="30"
 				required="true" />
 
-			<h:outputLabel for="cboPais" value="Pais "/>
-			
+
+
+			<p:outputLabel for="cboPais" value="Pais "/>
 			<p:selectOneMenu id="cboPais" value="#{ciudadController.ciudad.pais}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{ciudadController.listaPaises}" var="m"
