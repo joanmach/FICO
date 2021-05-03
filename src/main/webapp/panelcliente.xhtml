@@ -11,7 +11,7 @@
 	</ui:define>
 	
 	<ui:define name="titleCont">
-		<span>BIENVENIDO</span>
+		<span>BIENVENIDO CLIENTE</span>
 	</ui:define>
 	
 	<ui:define name="content">
@@ -21,6 +21,12 @@
 				<h:graphicImage value="/resources/img/asesoria.png" height="50%" width="50%">
 				</h:graphicImage>	
 			</div>	
+			<div align="center">
+				<p:commandButton value="INGRESAR"
+				styleClass="btn btn-primary " update="@form"
+				action="panel(cliente).xhtml" />
+			
+			</div>
 		</h:form>
 	</ui:define>
 	

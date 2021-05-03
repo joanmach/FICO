@@ -37,24 +37,42 @@ public class ClienteController implements Serializable{
 		this.listaClientes = new ArrayList<Cliente>();
 		this.cliente = new Cliente();
 		this.listar();
+		this.listarCliente();
 	}
 	
-	public String nuevoMotor() {
+	public String nuevoCliente() {
 		this.setCliente(new Cliente());
+		listaCiudades= cService.listar();
 		return "cliente.xml";
 	}
 
 	public void insertar() {
+		try {
 		mService.insertar(cliente);
 		limpiarCliente();
+		this.listarCliente();
+		}
+		catch(Exception ex) {
+		System.out.println(ex.getMessage());
+	          }
 	}
 	
 	
 	public void listarCliente() {
+		try {
 		listaClientes = mService.listar();
+			}
+			catch(Exception ex) {
+					System.out.println(ex.getMessage());
+								}
 	}
 	public void listar() {
+		try {
 		listaCiudades = cService.listar();
+	}
+	catch(Exception ex) {
+			System.out.println(ex.getMessage());
+						}
 	}
 	
 	public void limpiarCliente() {
@@ -62,10 +80,16 @@ public class ClienteController implements Serializable{
 	}
 	
 	public void eliminar(Cliente cliente) {
+		
+		try {
 		mService.eliminar(cliente.getIdCliente());
-		this.listar();
+		this.listarCliente();
+			}
+			catch(Exception ex) {
+					System.out.println(ex.getMessage());
+								}	
 	}
-	
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -74,14 +98,6 @@ public class ClienteController implements Serializable{
 		this.cliente = cliente;
 	}
 
-	public List<Cliente> getListaClientes() {
-		return listaClientes;
-	}
-
-	public void setListaMotores(List<Cliente> listaClientes) {
-		this.listaClientes = listaClientes;
-	}
-	
 	public Ciudad getCiudad() {
 		return ciudad;
 	}
@@ -90,11 +106,21 @@ public class ClienteController implements Serializable{
 		this.ciudad = ciudad;
 	}
 
+	public List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+
+	public void setListaClientes(List<Cliente> listaClientes) {
+		this.listaClientes = listaClientes;
+	}
+
 	public List<Ciudad> getListaCiudades() {
 		return listaCiudades;
 	}
 
 	public void setListaCiudades(List<Ciudad> listaCiudades) {
 		this.listaCiudades = listaCiudades;
-	}	
+	}
+	
+
 }

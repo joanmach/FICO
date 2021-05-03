@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Ciudadess")
+@Table(name="Ciudadesss")
 public class Ciudad implements Serializable {
 
 	private static final long serialVersionUID = 1L;
