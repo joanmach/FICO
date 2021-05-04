@@ -9,6 +9,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.apache.poi.util.SystemOutLogger;
+
 import pe.fico.entity.Ciudad;
 import pe.fico.service.ICiudadService;
 import pe.fico.entity.Pais;
@@ -25,8 +27,10 @@ public class CiudadController implements Serializable {
 	private ICiudadService cService;
 	@Inject
 	private iPaisService pService;
+	
 	private Ciudad ciudad;
 	private Pais pais;
+	
 	List<Ciudad> listaCiudades;
 	List<Pais> listaPaises;
 	
@@ -37,6 +41,7 @@ public class CiudadController implements Serializable {
 		this.listaCiudades = new ArrayList<Ciudad>();
 		this.ciudad = new Ciudad();
 		this.listar();
+		this.listarCiudades();
 	}
 	
 	public String nuevoCiudad() {
@@ -45,16 +50,34 @@ public class CiudadController implements Serializable {
 	}
 	
 	public void insertar() {
+		try {
 		cService.insertar(ciudad);
 		limpiarCiudad();
+		this.listarCiudades();
+		}
+		catch(Exception ex ) {
+			System.out.println(ex.getMessage());
+			
+		}
 	}
 	
 	public void listarCiudades() {
-		listaCiudades = cService.listar();
+		try{listaCiudades = cService.listar();
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+			
+		}
+		
 	}
 	
 	public void listar() {
-		listaPaises = pService.listar();
+		try{listaPaises = pService.listar();
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
 	}
 	
 	public void limpiarCiudad() {
@@ -62,8 +85,14 @@ public class CiudadController implements Serializable {
 	}
 	
 	public void eliminar(Ciudad ciudad) {
-		cService.eliminar(ciudad.getIdCiudad());
-		this.listar();
+		try{cService.eliminar(ciudad.getIdCiudad());
+		this.listarCiudades();
+		}
+		catch (Exception ex)
+		{
+			System.out.println(ex.getMessage());
+			
+		}
 	}
 
 	public Ciudad getCiudad() {

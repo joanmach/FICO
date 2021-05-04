@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Pais")
+@Table(name="Paises")
 public class Pais implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -48,5 +48,9 @@ public class Pais implements Serializable {
 	public void setNombrePais(String nombrePais) {
 		this.nombrePais = nombrePais;
 	}
+
+	
+	
+	
 	
 }
