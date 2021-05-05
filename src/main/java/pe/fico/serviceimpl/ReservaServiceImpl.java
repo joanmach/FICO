@@ -9,7 +9,7 @@ import pe.fico.dao.IReservaDao;
 import pe.fico.entity.Reserva;
 import pe.fico.service.IReservaService;
 
-public class IReservaServiceImpl implements IReservaService, Serializable{
+public class ReservaServiceImpl implements IReservaService, Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
