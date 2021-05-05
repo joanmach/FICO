@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Reserva de Asesoria:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Eliga entre los diferentes horarios</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idAsesor" value="Id " styleClass="control-label" />
+
+			 <p:inputText autocomplete="off" id="idAsesor"
+				styleClass="form-control" value="#{asesorController.asesor.idAsesor}"
+				required="true" /> 
+				
+			<h:outputLabel for="cboAsesoria" value="Asesoria "/>
+			
+			<p:selectOneMenu id="cboAsesoria" value="#{reservaController.reserva.asesoria}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{reservaController.listaAsesorias}" var="a"
+				 itemLabel="#{a.nombreAsesoria}" itemValue="#{a}"/>
+				</p:selectOneMenu>
+<br />
+			<h:outputLabel for="cboHorario" value="Horarios "/>
+			
+			<p:selectOneMenu id="cboHorario" value="#{reservaController.reserva.asesoria.horarioasesoria.horario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{reservaController.listaHorarios}" var="h"
+				 itemLabel="#{h.fechainicioHorario}" itemValue="#{h}"/>
+				</p:selectOneMenu>
+				
+			<br />
+			<br />
+
+			<p:commandButton value="Inscribirse"
+				actionListener="#{asesorController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listAsesor?faces-redirect=true" />
+			<p:commandButton value="Atras"
+				action="listAsesor?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+		
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
