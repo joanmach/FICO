@@ -5,10 +5,10 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<ui:composition template="master.xhtml">
+<ui:composition template="masterasesor.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Usuario:.
+        .:Registro de Asesor:.
     </ui:define>
 
 	<ui:define name="titleCont">
@@ -23,84 +23,68 @@
 				styleClass="form-control" value="#{clienteController.cliente.idCliente}"
 				required="true" /> 
 				
-			<h:outputLabel for="nombreCliente" value="Nombre "
+			<h:outputLabel for="nombreAsesor" value="Nombre "
 				styleClass="control-label" />
 			
-			<p:inputText autocomplete="off" id="nombreCliente"
+			<p:inputText autocomplete="off" id="nombreAsesor"
 				styleClass="form-control"
-				value="#{clienteController.cliente.nombreCliente}" maxlength="30"
+				value="#{asesorController.asesor.nombreAsesor}" maxlength="30"
 				required="true" />
 				
-			<h:outputLabel for="apellidoCliente" value="apellido "
+			<h:outputLabel for="apellidoAsesor" value="apellido "
 				styleClass="control-label" />
 			
-			<p:inputText autocomplete="off" id="apellidoCliente"
+			<p:inputText autocomplete="off" id="apellidoAsesor"
 				styleClass="form-control"
-				value="#{clienteController.cliente.apellidoCliente}" maxlength="30"
+				value="#{asesorController.asesor.apellidoAsesor}" maxlength="30"
 				required="true" />
 				
-			<h:outputLabel for="fechaNacCliente" value="Fecha de Nacimiento "
-				styleClass="control-label" />
-				
-			<p:calendar id="fechaNacCliente" pattern="dd/MM/yyyy"
-				value="#{clienteController.cliente.fechaNacCliente}" showOn="button"
-				timeZone="UTC" required="true">
-			</p:calendar>
-<br />
 			<h:outputLabel for="numeroDNI" value="DNI "
 				styleClass="control-label" />
 			
 			<p:inputText autocomplete="off" id="numeroDNI"
 				styleClass="form-control"
-				value="#{clienteController.cliente.numeroDNI}" maxlength="8"
+				value="#{asesorController.asesor.numeroDNI}" maxlength="8"
 				required="true" />
 				
-			<h:outputLabel for="correoCliente" value="Correo electronico "
+			<h:outputLabel for="correoAsesor" value="Correo electronico "
 				styleClass="control-label" />
 			
-			<p:inputText autocomplete="off" id="correoCliente"
+			<p:inputText autocomplete="off" id="correoAsesor"
 				styleClass="form-control"
-				value="#{clienteController.cliente.correoCliente}" maxlength="30"
+				value="#{asesorController.asesor.correoAsesor}" maxlength="30"
 				required="true" />
 				
-			<h:outputLabel for="contraseñaCliente" value="contraseña "
+			<h:outputLabel for="contraseñaAsesor" value="contraseña "
 				styleClass="control-label" />
 			
-			<p:inputText autocomplete="off" id="contraseñaCliente"
+			<p:inputText autocomplete="off" id="contraseñaAsesor"
 				styleClass="form-control"
-				value="#{clienteController.cliente.contraseñaCliente}" maxlength="30"
+				value="#{asesorController.asesor.contraseñaAsesor}" maxlength="30"
 				required="true" />	
-				
-			<h:outputLabel for="cboCiudad" value="Ciudad "/>
+			<br />
+			<br />
+			<h:outputLabel for="cboEspecialidad" value="Especialidad "/>
 			
-			<p:selectOneMenu id="cboCiudad" value="#{clienteController.cliente.ciudad}"
+			<p:selectOneMenu id="cboEspecialidad" value="#{asesorController.asesor.especialidad}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{clienteController.listaCiudades}" var="m"
-				 itemLabel="#{m.nombreCiudad}" itemValue="#{m}"/>
+				<f:selectItems value="#{asesorController.listaEspecialidades}" var="m"
+				 itemLabel="#{m.nombreEspecialidad} #{m.descripcion}"  itemValue="#{m}"/>
 				</p:selectOneMenu>
 			<br />
 			<br />
 
 
 			<p:commandButton value="Registrarse"
-				actionListener="#{clienteController.insertar()}"
+				actionListener="#{asesorController.insertar()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listCliente?faces-redirect=true" />
+				action="listAsesor?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listCliente?faces-redirect=true" immediate="true"
+				action="listAsesor?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
 
-		</h:form>
-		
-		<h:form>
-		<p>¿Por que registrarse?</p>
-		Finance Companion te ofrece distintos tipos de beneficios:
-		<li> Asesorias con profesionales y especialistas ☺</li>
-		<li> Clases pre-grabadas para ver en cualquier momento ◄►</li>
-		<li> Sistema de progresos para monitorear tus metas financieras ↑↑</li>
-	
 		</h:form>
 		
 	</ui:define>
