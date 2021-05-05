@@ -31,7 +31,7 @@ public class AsesorController implements Serializable {
 		this.listar();
 	}
 	
-	public String nuevoCiudad() {
+	public String nuevoAsesor() {
 		this.setAsesor(new Asesor());
 		return "asesor.xhtml";
 	}
