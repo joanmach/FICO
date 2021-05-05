@@ -31,6 +31,14 @@
 				value="#{clienteController.cliente.nombreCliente}" maxlength="30"
 				required="true" />
 				
+			<h:outputLabel for="apellidoCliente" value="apellido "
+				styleClass="control-label" />
+			
+			<p:inputText autocomplete="off" id="apellidoCliente"
+				styleClass="form-control"
+				value="#{clienteController.cliente.apellidoCliente}" maxlength="30"
+				required="true" />
+				
 			<h:outputLabel for="fechaNacCliente" value="Fecha de Nacimiento "
 				styleClass="control-label" />
 				
@@ -54,6 +62,14 @@
 				styleClass="form-control"
 				value="#{clienteController.cliente.correoCliente}" maxlength="30"
 				required="true" />
+				
+			<h:outputLabel for="contraseñaCliente" value="contraseña "
+				styleClass="control-label" />
+			
+			<p:inputText autocomplete="off" id="contraseñaCliente"
+				styleClass="form-control"
+				value="#{clienteController.cliente.contraseñaCliente}" maxlength="30"
+				required="true" />	
 				
 			<h:outputLabel for="cboCiudad" value="Ciudad "/>
 			
