@@ -57,6 +57,7 @@ public class Asesor implements Serializable{
 		this.especialidad = especialidad;
 	}
 
+	
 	public int getIdAsesor() {
 		return idAsesor;
 	}
