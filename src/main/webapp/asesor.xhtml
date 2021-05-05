@@ -68,9 +68,10 @@
 			
 			<p:selectOneMenu id="cboEspecialidad" value="#{asesorController.asesor.especialidad}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{asesorController.listaEspecialidades}" var="e"
-				 itemLabel="#{e.nombreEspecialidad}" itemValue="#{e}"/>
+				<f:selectItems value="#{asesorController.listaEspecialidades}" var="a"
+				 itemLabel="#{a.nombreEspecialidad}" itemValue="#{a}"/>
 				</p:selectOneMenu>
+				
 			<br />
 			<br />
 

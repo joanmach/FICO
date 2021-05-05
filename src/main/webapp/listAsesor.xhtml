@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html 	
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+		
+<ui:composition template="master.xhtml"> 
+	
+	<ui:define name="title">
+		.:CREA TU CUENTA:.
+	</ui:define>
+	
+	<ui:define name="titleCont">
+		<span>CUENTA</span>
+	</ui:define>
+	
+	<ui:define name="content">
+		<h:form>
+		
+			<div class="row">
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height:30px;"></span>
+						<p:commandButton value="Nuevo"						
+							action="#{asesorController.nuevoAsesor()}"
+							styleClass="btn btn-primary ajax=false" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstCliente" var="ase"
+							value="#{asesorController.listaAsesores}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{ase.idAsesor}">
+								<h:outputText value="#{ase.idAsesor}" />
+							</p:column>
+							<p:column headerText="Nombre" sortBy="#{ase.nombreAsesor}">
+								<h:outputText value="#{ase.nombreAsesor}" />
+							</p:column>
+							<p:column headerText="Apellido" sortBy="#{ase.apellidoAsesor}">
+								<h:outputText value="#{ase.apellidoAsesor}" />
+							</p:column>
+							<p:column headerText="DNI" sortBy="#{ase.numeroDNI}">
+								<h:outputText value="#{ase.numeroDNI}" />
+							</p:column>
+							<p:column headerText="Correo" sortBy= "#{ase.correoAsesor}">
+								<h:outputText value="#{ase.correoAsesor}" />
+							</p:column>
+							<p:column headerText="Especialidad" sortBy= "#{ase.especialidad.nombreEspecialidad}">
+								<h:outputText value="#{ase.especialidad.nombreEspecialidad}" />
+							</p:column>
+							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listAsesor" value="Eliminar"
+									actionListener="#{asesorController.eliminar(ase)}" />
+							</p:column>
+
+						</p:dataTable>
+					</div>
+				</div>				
+			</div>									
+		</h:form>
+	</ui:define>
+	
+	<ui:define name="footerCont">
+	</ui:define>
+		
+</ui:composition> 
+</html>
+ 
