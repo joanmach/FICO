@@ -5,44 +5,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import pe.fico.entity.Asesor;
+import pe.fico.entity.Especialidad;
 import pe.fico.service.IAsesorService;
+import pe.fico.service.IEspecialidadService;
 
-@Named
-@RequestScoped
-
-public class AsesorController implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class AsesorController implements Serializable{
+	
+private static final long serialVersionUID = -3351318371418292111L;
 	
 	@Inject
-	private IAsesorService cService;
+	private IAsesorService pService;
+	
+	@Inject
+	private IEspecialidadService mService;	
+				
 	private Asesor asesor;
 	List<Asesor> listaAsesores;
+	
+	private Especialidad especialidad;
+	List<Especialidad> listaEspecialidades;
 	
 	@PostConstruct
 	public void init() {
 		this.listaAsesores = new ArrayList<Asesor>();
 		this.asesor = new Asesor();
+		this.listaEspecialidades = new ArrayList<Especialidad>();
+		this.especialidad = new Especialidad();
+		this.listarAsesor();
 		this.listar();
 	}
 	
-	public String nuevoAsesor() {
+	public String nuevaAsesor() {
 		this.setAsesor(new Asesor());
 		return "asesor.xhtml";
 	}
 	
 	public void insertar() {
-		cService.insertar(asesor);
-		limpiarAsesor();
+		pService.insertar(asesor);
+		limpiarAsesor();		
+		this.listarAsesor();
+	}
+	
+	public void listarAsesor() {
+		listaAsesores = pService.listar();
 	}
 	
 	public void listar() {
-		listaAsesores = cService.listar();
+		listaEspecialidades = mService.listar();
 	}
 	
 	public void limpiarAsesor() {
@@ -50,8 +62,24 @@ public class AsesorController implements Serializable {
 	}
 	
 	public void eliminar(Asesor asesor) {
-		cService.eliminar(asesor.getIdAsesor());
-		this.listar();
+		pService.eliminar(asesor.getIdAsesor());
+		this.listarAsesor();
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public List<Especialidad> getListaEspecialidades() {
+		return listaEspecialidades;
+	}
+
+	public void setListaEspecialidades(List<Especialidad> listaEspecialidades) {
+		this.listaEspecialidades = listaEspecialidades;
 	}
 
 	public Asesor getAsesor() {
@@ -62,12 +90,11 @@ public class AsesorController implements Serializable {
 		this.asesor = asesor;
 	}
 
-	public List<Asesor> getListaAsesor() {
+	public List<Asesor> getListaAsesores() {
 		return listaAsesores;
 	}
 
 	public void setListaAsesores(List<Asesor> listaAsesores) {
 		this.listaAsesores = listaAsesores;
-	}	
-	
+	}
 }
