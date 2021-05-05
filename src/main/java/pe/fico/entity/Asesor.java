@@ -22,24 +22,34 @@ public class Asesor implements Serializable{
 	@Column(name="nombreAsesor", nullable=false, length=30)
 	private String nombreAsesor;
 	
+	@Column(name="apellidoAsesor", nullable=false, length=30)
+	private String apellidoAsesor;
+	
 	@Column(name="numeroDNI", nullable=false, length=8)
 	private int numeroDNI;
 	
 	@Column(name="correoAsesor", nullable=false, length=30)
 	private String correoAsesor;
-
+	
+	@Column(name="contraseñaAsesor", nullable=false, length=30)
+	private String contraseñaAsesor;
 
 	public Asesor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Asesor(int idAsesor, int numeroDNI, String correoAsesor) {
+	
+	public Asesor(int idAsesor, String nombreAsesor, String apellidoAsesor, int numeroDNI, String correoAsesor,
+			String contraseñaAsesor) {
 		super();
 		this.idAsesor = idAsesor;
+		this.nombreAsesor = nombreAsesor;
+		this.apellidoAsesor = apellidoAsesor;
 		this.numeroDNI = numeroDNI;
 		this.correoAsesor = correoAsesor;
+		this.contraseñaAsesor = contraseñaAsesor;
 	}
+
 
 	public int getIdAsesor() {
 		return idAsesor;
@@ -57,6 +67,14 @@ public class Asesor implements Serializable{
 		this.nombreAsesor = nombreAsesor;
 	}
 
+	public String getApellidoAsesor() {
+		return apellidoAsesor;
+	}
+
+	public void setApellidoAsesor(String apellidoAsesor) {
+		this.apellidoAsesor = apellidoAsesor;
+	}
+	
 	public int getNumeroDNI() {
 		return numeroDNI;
 	}
@@ -73,4 +91,11 @@ public class Asesor implements Serializable{
 		this.correoAsesor = correoAsesor;
 	}
 	
+	public String getContraseñaAsesor() {
+		return contraseñaAsesor;
+	}
+
+	public void setContraseñaAsesor(String contraseñaAsesor) {
+		this.correoAsesor = contraseñaAsesor;
+	}
 }
