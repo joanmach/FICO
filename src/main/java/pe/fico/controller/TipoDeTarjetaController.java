@@ -34,7 +34,7 @@ public class TipoDeTarjetaController implements Serializable {
 		this.setTipodetarjeta(new TipoDeTarjeta());
 		return "tipodetarjeta.xhtml";
 	}
-	
+
 	public void insertar() {
 		try {
 			tService.insertar(tipodetarjeta);
