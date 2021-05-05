@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import pe.fico.dao.IReservaDao;
 import pe.fico.entity.Reserva;
 
-public class IReservaDaoImpl implements IReservaDao, Serializable{
+public class ReservaDaoImpl implements IReservaDao, Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@PersistenceContext(unitName="a")
