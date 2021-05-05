@@ -14,7 +14,7 @@ import pe.fico.service.IAsesorService;
 
 public class AsesoriaController implements Serializable{
 	
-private static final long serialVersionUID = -3351318371418292111L;
+private static final long serialVersionUID = 1L;
 	
 	@Inject
 	private IAsesoriaService pService;

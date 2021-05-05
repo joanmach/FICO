@@ -14,7 +14,7 @@ import pe.fico.service.IEspecialidadService;
 
 public class AsesorController implements Serializable{
 	
-private static final long serialVersionUID = -3351318371418292111L;
+private static final long serialVersionUID = 1L;
 	
 	@Inject
 	private IAsesorService pService;
@@ -66,6 +66,22 @@ private static final long serialVersionUID = -3351318371418292111L;
 		this.listarAsesor();
 	}
 
+	public Asesor getAsesor() {
+		return asesor;
+	}
+
+	public void setAsesor(Asesor asesor) {
+		this.asesor = asesor;
+	}
+
+	public List<Asesor> getListaAsesores() {
+		return listaAsesores;
+	}
+
+	public void setListaAsesores(List<Asesor> listaAsesores) {
+		this.listaAsesores = listaAsesores;
+	}
+
 	public Especialidad getEspecialidad() {
 		return especialidad;
 	}
@@ -82,19 +98,5 @@ private static final long serialVersionUID = -3351318371418292111L;
 		this.listaEspecialidades = listaEspecialidades;
 	}
 
-	public Asesor getAsesor() {
-		return asesor;
-	}
 
-	public void setAsesor(Asesor asesor) {
-		this.asesor = asesor;
-	}
-
-	public List<Asesor> getListaAsesores() {
-		return listaAsesores;
-	}
-
-	public void setListaAsesores(List<Asesor> listaAsesores) {
-		this.listaAsesores = listaAsesores;
-	}
 }
