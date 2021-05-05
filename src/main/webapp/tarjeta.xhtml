@@ -30,6 +30,15 @@
 				styleClass="form-control"
 				value="#{tarjetaController.tarjeta.NTitular}" maxlength="30"
 				required="true" />
+				
+				<h:outputLabel for="fechaCaducidad" value="Fecha de Caducidad "
+				styleClass="control-label" />
+				
+			<p:calendar id="fechaCaducidad" pattern="dd/MM/yyyy"
+				value="#{tarjetaController.tarjeta.fechaCaducidad}" showOn="button"
+				timeZone="UTC" required="true">
+			</p:calendar>
+				
 			<br />	
 			
 			<p:outputLabel for="CEntidad" value="Entidad Bancaria" />
@@ -40,12 +49,12 @@
 					itemLabel="#{a.NEntidad}" itemValue="#{a}" />
 			</p:selectOneMenu>	
 				
-			<p:outputLabel for="CMedio" value="Tipo de Tarjeta" />
-			<p:selectOneMenu id="CMedio"
-				value="#{tarjetaController.tarjeta.medio}"
+			<p:outputLabel for="CTipo" value="Tipo de Tarjeta" />
+			<p:selectOneMenu id="CTipo"
+				value="#{tarjetaController.tarjeta.tipo}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{tarjetaController.listaMedios}" var="a"
-					itemLabel="#{a.NMedio}" itemValue="#{a}" />
+				<f:selectItems value="#{tarjetaController.listaTipos}" var="a"
+					itemLabel="#{a.NTipo}" itemValue="#{a}" />
 			</p:selectOneMenu>		
 				
 			<p:commandButton value="Registrar"

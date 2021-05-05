@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +35,10 @@ public class Asesor implements Serializable{
 	
 	@Column(name="contraseñaAsesor", nullable=false, length=30)
 	private String contraseñaAsesor;
+	
+	@ManyToOne
+	@JoinColumn(name="idEspecialidad",nullable=true)
+	private Especialidad especialidad;
 
 	public Asesor() {
 		super();
@@ -40,7 +46,7 @@ public class Asesor implements Serializable{
 	}
 	
 	public Asesor(int idAsesor, String nombreAsesor, String apellidoAsesor, int numeroDNI, String correoAsesor,
-			String contraseñaAsesor) {
+			String contraseñaAsesor, Especialidad especialidad) {
 		super();
 		this.idAsesor = idAsesor;
 		this.nombreAsesor = nombreAsesor;
@@ -48,8 +54,8 @@ public class Asesor implements Serializable{
 		this.numeroDNI = numeroDNI;
 		this.correoAsesor = correoAsesor;
 		this.contraseñaAsesor = contraseñaAsesor;
+		this.especialidad = especialidad;
 	}
-
 
 	public int getIdAsesor() {
 		return idAsesor;
@@ -97,5 +103,13 @@ public class Asesor implements Serializable{
 
 	public void setContraseñaAsesor(String contraseñaAsesor) {
 		this.correoAsesor = contraseñaAsesor;
+	}
+	
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
 	}
 }
