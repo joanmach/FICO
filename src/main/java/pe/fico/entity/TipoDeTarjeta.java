@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tipodetarjeta")
+@Table(name = "tipodetarjetas")
 
 public class TipoDeTarjeta implements Serializable{
 	
@@ -43,6 +43,34 @@ public class TipoDeTarjeta implements Serializable{
 
 	public void setNTipo(String nTipo) {
 		NTipo = nTipo;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + CTipo;
+		result = prime * result + ((NTipo == null) ? 0 : NTipo.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TipoDeTarjeta other = (TipoDeTarjeta) obj;
+		if (CTipo != other.CTipo)
+			return false;
+		if (NTipo == null) {
+			if (other.NTipo != null)
+				return false;
+		} else if (!NTipo.equals(other.NTipo))
+			return false;
+		return true;
 	}
 
 
