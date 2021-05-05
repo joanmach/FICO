@@ -12,20 +12,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Asesoria_Cliente")
+@Table(name="reserva")
 
-public class Asesoria_Cliente implements Serializable{
+public class Reserva implements Serializable{
 private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int idAsesoria;
-	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int idCliente;
-
-	private Date fechaAC;
-	
+	private int idReserva;
 	
 	@ManyToOne
 	@JoinColumn(name="idCliente",nullable=true)
@@ -35,45 +29,24 @@ private static final long serialVersionUID = 1L;
 	@JoinColumn(name="idAsesoria",nullable=true)
 	private Asesoria asesoria;
 
-	public Asesoria_Cliente() {
+	public Reserva() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 
-	public Asesoria_Cliente(int idAsesoria,int idCliente, Date fechaAC, Cliente cliente, Asesoria asesoria) {
+	public Reserva(int idReserva, Cliente cliente, Asesoria asesoria) {
 		super();
-		this.idAsesoria = idAsesoria;
-		this.idCliente=idCliente;
-		this.fechaAC= fechaAC;
-		this.cliente=cliente;
-		this.asesoria=asesoria;
+		this.idReserva = idReserva;
+		this.cliente = cliente;
+		this.asesoria = asesoria;
 	}
 
-	
-	
-
-	public int getIdAsesoria() {
-		return idAsesoria;
+	public int getIdReserva() {
+		return idReserva;
 	}
 
-	public void setIdAsesoria(int idAsesoria) {
-		this.idAsesoria = idAsesoria;
-	}
-
-	public int getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-	
-	public Date getFechaAC() {
-		return fechaAC;
-	}
-
-	public void setFechaAC(Date fechaAC) {
-		this.fechaAC = fechaAC;
+	public void setIdReserva(int idReserva) {
+		this.idReserva = idReserva;
 	}
 
 	public Cliente getCliente() {
@@ -83,7 +56,7 @@ private static final long serialVersionUID = 1L;
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
+
 	public Asesoria getAsesoria() {
 		return asesoria;
 	}
@@ -91,4 +64,6 @@ private static final long serialVersionUID = 1L;
 	public void setAsesoria(Asesoria asesoria) {
 		this.asesoria = asesoria;
 	}
+
+	
 }
