@@ -15,9 +15,6 @@ import pe.fico.entity.Asesoria;
 
 import pe.fico.service.iClienteService;
 import pe.fico.entity.Cliente;
-import pe.fico.entity.EntidadBancaria;
-import pe.fico.entity.Tarjeta;
-import pe.fico.entity.TipoDeTarjeta;
 
 
 public class Asesoria_ClienteController implements Serializable{
