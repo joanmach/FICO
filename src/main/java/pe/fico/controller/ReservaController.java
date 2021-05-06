@@ -22,7 +22,7 @@ import pe.fico.entity.Asesoria;
 @RequestScoped
 public class ReservaController implements Serializable{
 	
-private static final long serialVersionUID = -3351318371418292111L;
+private static final long serialVersionUID = 1L;
 	
 	@Inject
 	private IReservaService mService;

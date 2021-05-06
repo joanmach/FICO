@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 		
-<ui:composition template="masterasesor.xhtml"> 
+<ui:composition template="master.xhtml"> 
 	
 	<ui:define name="title">
 		.:Listado de Reservas:.
@@ -34,7 +34,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="listReservaasesoria" var="r"
+						<p:dataTable id="lstReservaasesoria" var="r"
 							value="#{reservaController.listaReservas}" paginator="true"
 							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 							rows="10" styleClass="table table-bordered"
@@ -44,9 +44,11 @@
 							<p:column headerText="Id" sortBy="#{r.idReserva}">
 								<h:outputText value="#{r.idReserva}" />
 							</p:column>
-
 							<p:column headerText="Nombre Asesoria" sortBy="#{r.asesoria.nombreAsesoria}">
 								<h:outputText value="#{r.asesoria.nombreAsesoria}" />
+							</p:column>
+							<p:column headerText="Descripcion Asesoria" sortBy="#{r.asesoria.descripcion}">
+								<h:outputText value="#{r.asesoria.descripcion}" />
 							</p:column>
 							
 							<p:column headerText="Precio Asesoria" sortBy="#{r.asesoria.precioAsesoria}">

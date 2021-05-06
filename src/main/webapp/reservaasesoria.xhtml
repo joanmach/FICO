@@ -23,15 +23,11 @@
 				styleClass="form-control" value="#{reservaController.reserva.idReserva}"
 				required="true" /> 
 			
-			<br />	
-			<br />
-				
 			<h:outputLabel for="cboAsesoria" value="Asesoria "/>
-			
 			<p:selectOneMenu id="cboAsesoria" value="#{reservaController.reserva.asesoria}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.asesoria}" var="a"
-				 itemLabel="#{a.nombreAsesoria}" itemValue="#{a}"/>
+				<f:selectItems value="#{reservaController.listaAsesorias}" var="d"
+				 itemLabel="#{d.nombreAsesoria} #{d.precioAsesoria} " itemValue="#{d}"/>
 				</p:selectOneMenu>
 
             <br />	
@@ -40,8 +36,8 @@
 			
 			<p:selectOneMenu id="cboCliente" value="#{reservaController.reserva.cliente}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.cliente}" var="b"
-				 itemLabel="#{b.clientenombreCliente}" itemValue="#{b}"/>
+				<f:selectItems value="#{reservaController.listaClientes}" var="c"
+				 itemLabel="#{c.clientenombreCliente}" itemValue="#{c}"/>
 				</p:selectOneMenu>
 			<br />	
 			<br />

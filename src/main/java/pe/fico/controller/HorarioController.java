@@ -39,6 +39,7 @@ public class HorarioController implements Serializable {
 	public void insertar() {
 		hService.insertar(horario);
 		limpiarHorario();
+		this.listar();
 	}
 	
 	public void listar() {

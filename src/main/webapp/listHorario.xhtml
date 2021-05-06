@@ -46,23 +46,16 @@
 							</p:column>
 							
 							<p:column headerText="Fecha Inicio" sortBy="#{hor.DFechaInicio}">
-								<h:outputText value="#{hor.DFechaInicio}" />
+								<h:outputText value="#{hor.DFechaInicio}" >
+								<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>
+								
 							</p:column>
 
 							<p:column headerText="Fecha Fin" sortBy="#{hor.DFechaFin}">
-								<h:outputText value="#{hor.DFechaFin}" />
-							</p:column>
-							
-							<p:column headerText="Hora Inicio" sortBy="#{hor.DHoraInicio}">
-								<h:outputText value="#{hor.DHoraInicio}"/>
-								<!--<f:convertDateTime pattern="HH-mm-ss" />
-								</h:outputText>-->
-							</p:column>
-							
-							<p:column headerText="Hora Fin" sortBy="#{hor.DHoraFin}">
-								<h:outputText value="#{hor.DHoraFin}" />
-								<!--  <f:convertDateTime pattern="HH-mm-ss" />
-								</h:outputText>-->
+								<h:outputText value="#{hor.DFechaFin}" >
+								<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>	
 							</p:column>
 							
 						</p:dataTable>

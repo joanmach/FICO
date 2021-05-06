@@ -19,30 +19,21 @@
 		<h:form>
 			<h:outputLabel for="CHorario" value="Id " styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="idColaborador"
-				styleClass="form-control" value="#{horarioController.horario.idHorario}"
-				required="true" />
-				
-			<p:calendar id="fechaInicio" pattern="dd/MM/yyyy"
-				value="#{horarioController.horario.DFechaInicio}" showOn="button"
-				timeZone="UTC" required="true">
-			</p:calendar>
-			
-			<p:calendar id="fechaFinf" pattern="dd/MM/yyyy"
-				value="#{horarioController.horario.DFechaFin}" showOn="button"
-				timeZone="UTC" required="true">
-			</p:calendar>
-
-			<p:calendar id="horaInicio" pattern="HH:mm" timeOnly="true"
-				value="#{horarioController.horario.DHoraInicio}" 
-				 required="true">
-			</p:calendar>
-				
-		   <p:calendar id="horaFin" pattern="HH:mm" timeOnly="true"
-				value="#{horarioController.horario.DHoraFin}" 
-				 required="true">
-			</p:calendar>
-					
+			<p:column headerText="Codigo Horario" sortBy="#{hor.idHorario}">
+								<h:outputText value="#{hor.idHorario}" />
+							</p:column>
+							
+							<p:calendar id="Fecha inicio" pattern="dd/MM/yyyy"
+				       			 value="#{horarioController.horario.DFechaInicio}" showOn="button"
+									timeZone="UTC" required="true">
+			      		   </p:calendar>
+			      		   
+			      		   <p:calendar id="Fecha Fin" pattern="dd/MM/yyyy"
+				       			 value="#{horarioController.horario.DFechaFin}" showOn="button"
+									timeZone="UTC" required="true">
+			      		   </p:calendar>
+			      		   
+			      		
 									
 			<p:commandButton value="Registrar"
 				actionListener="#{horarioController.insertar()}"
