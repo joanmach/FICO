@@ -81,6 +81,52 @@ public class Horario implements Serializable {
 		DHoraFin = dHoraFin;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((DFechaFin == null) ? 0 : DFechaFin.hashCode());
+		result = prime * result + ((DFechaInicio == null) ? 0 : DFechaInicio.hashCode());
+		result = prime * result + ((DHoraFin == null) ? 0 : DHoraFin.hashCode());
+		result = prime * result + ((DHoraInicio == null) ? 0 : DHoraInicio.hashCode());
+		result = prime * result + idHorario;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Horario other = (Horario) obj;
+		if (DFechaFin == null) {
+			if (other.DFechaFin != null)
+				return false;
+		} else if (!DFechaFin.equals(other.DFechaFin))
+			return false;
+		if (DFechaInicio == null) {
+			if (other.DFechaInicio != null)
+				return false;
+		} else if (!DFechaInicio.equals(other.DFechaInicio))
+			return false;
+		if (DHoraFin == null) {
+			if (other.DHoraFin != null)
+				return false;
+		} else if (!DHoraFin.equals(other.DHoraFin))
+			return false;
+		if (DHoraInicio == null) {
+			if (other.DHoraInicio != null)
+				return false;
+		} else if (!DHoraInicio.equals(other.DHoraInicio))
+			return false;
+		if (idHorario != other.idHorario)
+			return false;
+		return true;
+	}
+
 	
 	
 	
