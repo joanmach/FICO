@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html 	
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+		
+<ui:composition template="master.xhtml"> 
+	
+	<ui:define name="title">
+		.:Listado de Asesorias:.
+	</ui:define>
+	
+	<ui:define name="titleCont">
+		<span>Asesorias</span>
+	</ui:define>
+	
+	<ui:define name="content">
+		<h:form>
+		
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="listAsesoria" var="ases"
+							value="#{asesoriaController.listaAsesorias}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen Asesorias" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{ases.idAsesoria}">
+								<h:outputText value="#{ases.idAsesoria}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{ases.nombreAsesoria}">
+								<h:outputText value="#{ases.nombreAsesoria}" />
+							</p:column>
+							
+							<p:column headerText="Precio Asesoria" sortBy="#{ases.precioAsesoria}">
+								<h:outputText value="#{ases.precioAsesoria}" />
+							</p:column>
+							
+							<p:column headerText="Descripcion" sortBy="#{ases.descripcion}">
+								<h:outputText value="#{ases.descripcion}" />
+							</p:column>
+							
+							<p:column headerText="asesor nombre" sortBy="#{ases.asesor.asesornombre}">
+								<h:outputText value="#{ases.asesor.asesornombre}" />
+							</p:column>
+							
+							<p:column headerText="asesor apellido" sortBy="#{ases.asesor.asesornombreapellido}">
+								<h:outputText value="#{ases.asesor.asesornombreapellido}" />
+							</p:column>
+							
+										
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listAsesoria" value="Eliminar"
+									actionListener="#{asesoriaController.eliminar(ases)}" />
+							</p:column>
+
+						</p:dataTable>
+					</div>
+				</div>				
+			</div>									
+		</h:form>
+	</ui:define>
+	
+	<ui:define name="footerCont">
+	</ui:define>
+		
+</ui:composition> 
+</html>
+ 

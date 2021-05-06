@@ -46,18 +46,32 @@
 							</p:column>
 							
 							<p:column headerText="HorarioInicio"
-								sortBy="#{hor.horario.idHorario}">
-								<h:outputText value="#{hor.horario.DFechaInicio}" />
+								sortBy="#{hor.horario.DFechaInicio}">
+								<h:outputText value="#{hor.horario.DFechaInicio}" >
+								<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>
 							</p:column>
 							
 							<p:column headerText="HorarioFin"
-								sortBy="#{hor.horario.idHorario}">
-								<h:outputText value="#{hor.horario.DFechaFin}" />
+								sortBy="#{hor.horario.DFechaFin}">
+								<h:outputText value="#{hor.horario.DFechaFin}" >
+								<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
+								</h:outputText>
 							</p:column>
 				
 							<p:column headerText="Asesoria"
-								sortBy="#{hor.asesoria.idAsesoria}">
+								sortBy="#{hor.asesoria.nombreAsesoria}">
 								<h:outputText value="#{hor.asesoria.nombreAsesoria}" />
+							</p:column>
+							
+							<p:column headerText="Descripcion de Asesoria"
+								sortBy="#{hor.asesoria.nombreAsesoria}">
+								<h:outputText value="#{hor.asesoria.descripcion}" />
+							</p:column>
+							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listHorarioAsesoria" value="Eliminar"
+									actionListener="#{horarioAsesoriaController.eliminar(hor)}" />
 							</p:column>
 							
 						</p:dataTable>
