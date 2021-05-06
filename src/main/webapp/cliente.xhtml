@@ -20,7 +20,7 @@
 			<h:outputLabel for="idCliente" value="Id " styleClass="control-label" />
 
 			 <p:inputText autocomplete="off" id="idCliente"
-				styleClass="form-control" value="#{clienteController.cliente.idCliente}"
+				styleClass="form-control" value="#{clienteController.cliente.CCliente}"
 				required="true" /> 
 				
 			<h:outputLabel for="nombreCliente" value="Nombre "
@@ -28,7 +28,7 @@
 			
 			<p:inputText autocomplete="off" id="nombreCliente"
 				styleClass="form-control"
-				value="#{clienteController.cliente.nombreCliente}" maxlength="30"
+				value="#{clienteController.cliente.clientenombreCliente}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="apellidoCliente" value="apellido "
@@ -36,14 +36,14 @@
 			
 			<p:inputText autocomplete="off" id="apellidoCliente"
 				styleClass="form-control"
-				value="#{clienteController.cliente.apellidoCliente}" maxlength="30"
+				value="#{clienteController.cliente.clientenombreapellidoCliente}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="fechaNacCliente" value="Fecha de Nacimiento "
 				styleClass="control-label" />
 				
 			<p:calendar id="fechaNacCliente" pattern="dd/MM/yyyy"
-				value="#{clienteController.cliente.fechaNacCliente}" showOn="button"
+				value="#{clienteController.cliente.clientefechaNacCliente}" showOn="button"
 				timeZone="UTC" required="true">
 			</p:calendar>
 <br />
@@ -52,7 +52,7 @@
 			
 			<p:inputText autocomplete="off" id="numeroDNI"
 				styleClass="form-control"
-				value="#{clienteController.cliente.numeroDNI}" maxlength="8"
+				value="#{clienteController.cliente.clientenumeroDNI}" maxlength="8"
 				required="true" />
 				
 			<h:outputLabel for="correoCliente" value="Correo electronico "
@@ -60,7 +60,7 @@
 			
 			<p:inputText autocomplete="off" id="correoCliente"
 				styleClass="form-control"
-				value="#{clienteController.cliente.correoCliente}" maxlength="30"
+				value="#{clienteController.cliente.clientecorreoCliente}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="contraseñaCliente" value="contraseña "
@@ -68,7 +68,7 @@
 			
 			<p:inputText autocomplete="off" id="contraseñaCliente"
 				styleClass="form-control"
-				value="#{clienteController.cliente.contraseñaCliente}" maxlength="30"
+				value="#{clienteController.cliente.clientecontraseñaCliente}" maxlength="30"
 				required="true" />	
 				
 			<h:outputLabel for="cboCiudad" value="Ciudad "/>

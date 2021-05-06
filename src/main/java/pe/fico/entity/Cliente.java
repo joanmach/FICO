@@ -13,31 +13,31 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Clientess")
+@Table(name="Clientesss")
 public class Cliente implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int idCliente;
+	private int CCliente;
 
-	@Column(name="nombreCliente", nullable=false, length=30)
-	private String nombreCliente;
+	@Column(name="ClientenombreCliente", nullable=false, length=30)
+	private String clientenombreCliente;
 	
-	@Column(name="apellidoCliente", nullable=false, length=30)
-	private String apellidoCliente;
+	@Column(name="ClientenombreapellidoCliente", nullable=false, length=30)
+	private String clientenombreapellidoCliente;
 	
-	private Date fechaNacCliente;
+	private Date ClientefechaNacCliente;
 	
-	@Column(name="numeroDNI", nullable=false, length=8)
-	private int numeroDNI;
+	@Column(name="ClientenumeroDNI", nullable=false, length=8)
+	private int clientenumeroDNI;
 	
-	@Column(name="correoCliente", nullable=false, length=30)
-	private String correoCliente;
+	@Column(name="ClientecorreoCliente", nullable=false, length=30)
+	private String ClientecorreoCliente;
 
-	@Column(name="contraseñaCliente", nullable=false, length=30)
-	private String contraseñaCliente;
+	@Column(name="ClientecontraseñaCliente", nullable=false, length=30)
+	private String clientecontraseñaCliente;
 
 	
 	@ManyToOne
@@ -49,73 +49,74 @@ public class Cliente implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(int idCliente, String nombreCliente, String apellidoCliente, Date fechaNacCliente, int numeroDNI,
-			String correoCliente, String contraseñaCliente, Ciudad ciudad) {
+	public Cliente(int cCliente, String clientenombreCliente, String clientenombreapellidoCliente,
+			Date clientefechaNacCliente, int clientenumeroDNI, String clientecorreoCliente,
+			String clientecontraseñaCliente, Ciudad ciudad) {
 		super();
-		this.idCliente = idCliente;
-		this.nombreCliente = nombreCliente;
-		this.apellidoCliente = apellidoCliente;
-		this.fechaNacCliente = fechaNacCliente;
-		this.numeroDNI = numeroDNI;
-		this.correoCliente = correoCliente;
-		this.contraseñaCliente = contraseñaCliente;
+		CCliente = cCliente;
+		this.clientenombreCliente = clientenombreCliente;
+		this.clientenombreapellidoCliente = clientenombreapellidoCliente;
+		ClientefechaNacCliente = clientefechaNacCliente;
+		this.clientenumeroDNI = clientenumeroDNI;
+		ClientecorreoCliente = clientecorreoCliente;
+		this.clientecontraseñaCliente = clientecontraseñaCliente;
 		this.ciudad = ciudad;
 	}
 
-	public int getIdCliente() {
-		return idCliente;
+	public int getCCliente() {
+		return CCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setCCliente(int cCliente) {
+		CCliente = cCliente;
 	}
 
-	public String getNombreCliente() {
-		return nombreCliente;
+	public String getClientenombreCliente() {
+		return clientenombreCliente;
 	}
 
-	public void setNombreCliente(String nombreCliente) {
-		this.nombreCliente = nombreCliente;
+	public void setClientenombreCliente(String clientenombreCliente) {
+		this.clientenombreCliente = clientenombreCliente;
 	}
 
-	public String getApellidoCliente() {
-		return apellidoCliente;
+	public String getClientenombreapellidoCliente() {
+		return clientenombreapellidoCliente;
 	}
 
-	public void setApellidoCliente(String apellidoCliente) {
-		this.apellidoCliente = apellidoCliente;
+	public void setClientenombreapellidoCliente(String clientenombreapellidoCliente) {
+		this.clientenombreapellidoCliente = clientenombreapellidoCliente;
 	}
 
-	public Date getFechaNacCliente() {
-		return fechaNacCliente;
+	public Date getClientefechaNacCliente() {
+		return ClientefechaNacCliente;
 	}
 
-	public void setFechaNacCliente(Date fechaNacCliente) {
-		this.fechaNacCliente = fechaNacCliente;
+	public void setClientefechaNacCliente(Date clientefechaNacCliente) {
+		ClientefechaNacCliente = clientefechaNacCliente;
 	}
 
-	public int getNumeroDNI() {
-		return numeroDNI;
+	public int getClientenumeroDNI() {
+		return clientenumeroDNI;
 	}
 
-	public void setNumeroDNI(int numeroDNI) {
-		this.numeroDNI = numeroDNI;
+	public void setClientenumeroDNI(int clientenumeroDNI) {
+		this.clientenumeroDNI = clientenumeroDNI;
 	}
 
-	public String getCorreoCliente() {
-		return correoCliente;
+	public String getClientecorreoCliente() {
+		return ClientecorreoCliente;
 	}
 
-	public void setCorreoCliente(String correoCliente) {
-		this.correoCliente = correoCliente;
+	public void setClientecorreoCliente(String clientecorreoCliente) {
+		ClientecorreoCliente = clientecorreoCliente;
 	}
 
-	public String getContraseñaCliente() {
-		return contraseñaCliente;
+	public String getClientecontraseñaCliente() {
+		return clientecontraseñaCliente;
 	}
 
-	public void setContraseñaCliente(String contraseñaCliente) {
-		this.contraseñaCliente = contraseñaCliente;
+	public void setClientecontraseñaCliente(String clientecontraseñaCliente) {
+		this.clientecontraseñaCliente = clientecontraseñaCliente;
 	}
 
 	public Ciudad getCiudad() {
@@ -125,6 +126,8 @@ public class Cliente implements Serializable{
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
+
+
 
 	
 	

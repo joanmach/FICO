@@ -17,10 +17,10 @@
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="idCliente" value="Id " styleClass="control-label" />
+			<h:outputLabel for="idAsesor" value="Id " styleClass="control-label" />
 
-			 <p:inputText autocomplete="off" id="idCliente"
-				styleClass="form-control" value="#{clienteController.cliente.idCliente}"
+			 <p:inputText autocomplete="off" id="idAsesor"
+				styleClass="form-control" value="#{asesorController.asesor.idAsesor}"
 				required="true" /> 
 				
 			<h:outputLabel for="nombreAsesor" value="Nombre "
@@ -28,7 +28,7 @@
 			
 			<p:inputText autocomplete="off" id="nombreAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.nombreAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesornombre}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="apellidoAsesor" value="apellido "
@@ -36,7 +36,7 @@
 			
 			<p:inputText autocomplete="off" id="apellidoAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.apellidoAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesornombreapellido}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="numeroDNI" value="DNI "
@@ -44,7 +44,7 @@
 			
 			<p:inputText autocomplete="off" id="numeroDNI"
 				styleClass="form-control"
-				value="#{asesorController.asesor.numeroDNI}" maxlength="8"
+				value="#{asesorController.asesor.asesornumeroDNI}" maxlength="8"
 				required="true" />
 				
 			<h:outputLabel for="correoAsesor" value="Correo electronico "
@@ -52,7 +52,7 @@
 			
 			<p:inputText autocomplete="off" id="correoAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.correoAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesorncorreoAsesor}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="contraseñaAsesor" value="contraseña "
@@ -60,7 +60,7 @@
 			
 			<p:inputText autocomplete="off" id="contraseñaAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.contraseñaAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesorncontraseñaAsesor}" maxlength="30"
 				required="true" />	
 			<br />
 			<br />
@@ -69,7 +69,7 @@
 			<p:selectOneMenu id="cboEspecialidad" value="#{asesorController.asesor.especialidad}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{asesorController.listaEspecialidades}" var="m"
-				 itemLabel="#{m.nombreEspecialidad} #{m.descripcion}"  itemValue="#{m}"/>
+				 itemLabel="#{m.nombreEspecialidad} #{m.TDescripcion}"  itemValue="#{m}"/>
 				</p:selectOneMenu>
 			<br />
 			<br />

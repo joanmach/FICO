@@ -39,6 +39,7 @@ public class EspecialidadController implements Serializable {
 	public void insertar() {
 		pService.insertar(especialidad);
 		limpiarEspecialidad();
+		this.listar();
 	}
 	
 	public void listar() {

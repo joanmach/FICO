@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<ui:composition template="master.xhtml">
+<ui:composition template="masterasesor.xhtml">
 
 	<ui:define name="title">
         .:Registro de Especialidades:.
@@ -23,7 +23,7 @@
 				styleClass="form-control" value="#{especialidadController.especialidad.idEspecialidad}"
 				required="true" />
 				
-			<h:outputLabel for="NEntidad" value="Nombre de la Especialidad"
+			<h:outputLabel for="NEspecialidad" value="Nombre de la Especialidad"
 				styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="NEspecialidad"
@@ -37,7 +37,7 @@
 
 			<p:inputText autocomplete="off" id="TDescripcion"
 				styleClass="form-control"
-				value="#{especialidadController.especialidad.descripcion}" maxlength="50"
+				value="#{especialidadController.especialidad.TDescripcion}" maxlength="50"
 				required="true" />
 				
 				
