@@ -12,42 +12,46 @@
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Eliga entre los diferentes horarios</span>
+		<span>Reserva</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="idAsesor" value="Id " styleClass="control-label" />
+			<h:outputLabel for="idReserva" value="Id " styleClass="control-label" />
 
-			 <p:inputText autocomplete="off" id="idAsesor"
-				styleClass="form-control" value="#{asesorController.asesor.idAsesor}"
+			 <p:inputText autocomplete="off" id="idReserva"
+				styleClass="form-control" value="#{reservaController.reserva.idReserva}"
 				required="true" /> 
+			
+			<br />	
+			<br />
 				
 			<h:outputLabel for="cboAsesoria" value="Asesoria "/>
 			
 			<p:selectOneMenu id="cboAsesoria" value="#{reservaController.reserva.asesoria}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.listaAsesorias}" var="a"
+				<f:selectItems value="#{reservaController.asesoria}" var="a"
 				 itemLabel="#{a.nombreAsesoria}" itemValue="#{a}"/>
 				</p:selectOneMenu>
-<br />
-			<h:outputLabel for="cboHorario" value="Horarios "/>
-			
-			<p:selectOneMenu id="cboHorario" value="#{reservaController.reserva.asesoria.horarioasesoria.horario}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.listaHorarios}" var="h"
-				 itemLabel="#{h.fechainicioHorario}" itemValue="#{h}"/>
-				</p:selectOneMenu>
-				
+
+            <br />	
 			<br />
+				<h:outputLabel for="cboCliente" value="Cliente "/>
+			
+			<p:selectOneMenu id="cboCliente" value="#{reservaController.reserva.cliente}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{reservaController.cliente}" var="b"
+				 itemLabel="#{b.clientenombreCliente}" itemValue="#{b}"/>
+				</p:selectOneMenu>
+			<br />	
 			<br />
 
-			<p:commandButton value="Inscribirse"
-				actionListener="#{asesorController.insertar()}"
+			<p:commandButton value="Reservar"
+				actionListener="#{reservaController.insertar()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listAsesor?faces-redirect=true" />
+				action="listReservaasesoria?faces-redirect=true" />
 			<p:commandButton value="Atras"
-				action="listAsesor?faces-redirect=true" immediate="true"
+				action="listReservaasesoria?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 
 			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
