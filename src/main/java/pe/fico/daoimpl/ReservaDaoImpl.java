@@ -26,16 +26,11 @@ public class ReservaDaoImpl implements IReservaDao, Serializable{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Reserva> listar() {
-		List<Reserva> lista = new ArrayList<Reserva>();
-		try {
+			List<Reserva> lista = new ArrayList<Reserva>();
 			Query q = em.createQuery("select r from Reserva r");
 			lista = (List<Reserva>) q.getResultList();
-		}
-		catch(Exception ex) {
-			System.out.println(ex.getMessage());
-		}
+			return lista;
 		
-		return lista;
 	}
 	
 	@Transactional

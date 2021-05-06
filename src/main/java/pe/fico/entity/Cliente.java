@@ -127,6 +127,68 @@ public class Cliente implements Serializable{
 		this.ciudad = ciudad;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + CCliente;
+		result = prime * result + ((ClientecorreoCliente == null) ? 0 : ClientecorreoCliente.hashCode());
+		result = prime * result + ((ClientefechaNacCliente == null) ? 0 : ClientefechaNacCliente.hashCode());
+		result = prime * result + ((ciudad == null) ? 0 : ciudad.hashCode());
+		result = prime * result + ((clientecontraseñaCliente == null) ? 0 : clientecontraseñaCliente.hashCode());
+		result = prime * result + ((clientenombreCliente == null) ? 0 : clientenombreCliente.hashCode());
+		result = prime * result
+				+ ((clientenombreapellidoCliente == null) ? 0 : clientenombreapellidoCliente.hashCode());
+		result = prime * result + clientenumeroDNI;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (CCliente != other.CCliente)
+			return false;
+		if (ClientecorreoCliente == null) {
+			if (other.ClientecorreoCliente != null)
+				return false;
+		} else if (!ClientecorreoCliente.equals(other.ClientecorreoCliente))
+			return false;
+		if (ClientefechaNacCliente == null) {
+			if (other.ClientefechaNacCliente != null)
+				return false;
+		} else if (!ClientefechaNacCliente.equals(other.ClientefechaNacCliente))
+			return false;
+		if (ciudad == null) {
+			if (other.ciudad != null)
+				return false;
+		} else if (!ciudad.equals(other.ciudad))
+			return false;
+		if (clientecontraseñaCliente == null) {
+			if (other.clientecontraseñaCliente != null)
+				return false;
+		} else if (!clientecontraseñaCliente.equals(other.clientecontraseñaCliente))
+			return false;
+		if (clientenombreCliente == null) {
+			if (other.clientenombreCliente != null)
+				return false;
+		} else if (!clientenombreCliente.equals(other.clientenombreCliente))
+			return false;
+		if (clientenombreapellidoCliente == null) {
+			if (other.clientenombreapellidoCliente != null)
+				return false;
+		} else if (!clientenombreapellidoCliente.equals(other.clientenombreapellidoCliente))
+			return false;
+		if (clientenumeroDNI != other.clientenumeroDNI)
+			return false;
+		return true;
+	}
+
 
 
 	
