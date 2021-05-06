@@ -32,8 +32,6 @@ public class Horario implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
 	public Horario(int idHorario, Date dFechaInicio, Date dFechaFin) {
 		super();
 		this.idHorario = idHorario;
@@ -41,7 +39,29 @@ public class Horario implements Serializable {
 		DFechaFin = dFechaFin;
 	}
 
+	public int getIdHorario() {
+		return idHorario;
+	}
 
+	public void setIdHorario(int idHorario) {
+		this.idHorario = idHorario;
+	}
+
+	public Date getDFechaInicio() {
+		return DFechaInicio;
+	}
+
+	public void setDFechaInicio(Date dFechaInicio) {
+		DFechaInicio = dFechaInicio;
+	}
+
+	public Date getDFechaFin() {
+		return DFechaFin;
+	}
+
+	public void setDFechaFin(Date dFechaFin) {
+		DFechaFin = dFechaFin;
+	}
 
 	@Override
 	public int hashCode() {
@@ -52,8 +72,6 @@ public class Horario implements Serializable {
 		result = prime * result + idHorario;
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -80,33 +98,6 @@ public class Horario implements Serializable {
 	}
 
 
-
-	public int getIdHorario() {
-		return idHorario;
-	}
-
-	public void setIdHorario(int idHorario) {
-		this.idHorario = idHorario;
-	}
-
-	public Date getDFechaInicio() {
-		return DFechaInicio;
-	}
-
-	public void setDFechaInicio(Date dFechaInicio) {
-		DFechaInicio = dFechaInicio;
-	}
-
-	public Date getDFechaFin() {
-		return DFechaFin;
-	}
-
-	public void setDFechaFin(Date dFechaFin) {
-		DFechaFin = dFechaFin;
-	}
-
-	
-	
 	
 	
 }

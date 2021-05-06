@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<ui:composition template="master.xhtml">
+<ui:composition template="masterasesor.xhtml">
 
 	<ui:define name="title">
         .:Registro de Horario:.
@@ -23,17 +23,30 @@
 								<h:outputText value="#{hor.idHorario}" />
 							</p:column>
 							
-							<p:calendar id="Fecha inicio" pattern="dd/MM/yyyy"
+							<br />
+							<br />
+							<h:outputLabel for="fechainicio" value="fecha de inicio "
+				             styleClass="control-label" />
+							<p:calendar id="Fechainicio" pattern="dd/MM/yyyy"
 				       			 value="#{horarioController.horario.DFechaInicio}" showOn="button"
 									timeZone="UTC" required="true">
 			      		   </p:calendar>
 			      		   
-			      		   <p:calendar id="Fecha Fin" pattern="dd/MM/yyyy"
+			      		   <br />
+			      		   <br />
+			      		   
+			      		   <h:outputLabel for="fechaFin" value="Fecha de Fin "
+				            styleClass="control-label" />
+				            
+			      		   <p:calendar id="FechaFin" pattern="dd/MM/yyyy"
 				       			 value="#{horarioController.horario.DFechaFin}" showOn="button"
 									timeZone="UTC" required="true">
 			      		   </p:calendar>
+			      		  
+			      		   <br />
+			      		   <br />
 			      		   
-			      		
+			      		   
 									
 			<p:commandButton value="Registrar"
 				actionListener="#{horarioController.insertar()}"
