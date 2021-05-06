@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import pe.fico.service.IReservaService;
 import pe.fico.entity.Reserva;
@@ -16,7 +18,8 @@ import pe.fico.entity.Cliente;
 import pe.fico.service.IAsesoriaService;
 import pe.fico.entity.Asesoria;
 
-
+@Named
+@RequestScoped
 public class ReservaController implements Serializable{
 	
 private static final long serialVersionUID = -3351318371418292111L;
