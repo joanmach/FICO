@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Asesor")
+@Table(name="Asesoressss")
 public class Asesor implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -21,20 +21,20 @@ public class Asesor implements Serializable{
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private int idAsesor;
 
-	@Column(name="nombreAsesor", nullable=false, length=30)
-	private String nombreAsesor;
+	@Column(name="Asesornombre", nullable=false, length=30)
+	private String asesornombre;
 	
-	@Column(name="apellidoAsesor", nullable=false, length=30)
-	private String apellidoAsesor;
+	@Column(name="Asesornombreapellido", nullable=false, length=30)
+	private String asesornombreapellido;
 	
-	@Column(name="numeroDNI", nullable=false, length=8)
-	private int numeroDNI;
+	@Column(name="AsesornumeroDNI", nullable=false, length=8)
+	private int asesornumeroDNI;
 	
-	@Column(name="correoAsesor", nullable=false, length=30)
-	private String correoAsesor;
+	@Column(name="AsesorncorreoAsesor", nullable=false, length=30)
+	private String asesorncorreoAsesor;
 	
-	@Column(name="contraseñaAsesor", nullable=false, length=30)
-	private String contraseñaAsesor;
+	@Column(name="AsesorncontraseñaAsesor", nullable=false, length=30)
+	private String asesorncontraseñaAsesor;
 	
 	@ManyToOne
 	@JoinColumn(name="idEspecialidad",nullable=true)
@@ -45,72 +45,120 @@ public class Asesor implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Asesor(int idAsesor, String nombreAsesor, String apellidoAsesor, int numeroDNI, String correoAsesor,
-			String contraseñaAsesor, Especialidad especialidad) {
+	
+
+	
+	public Asesor(int idAsesor, String asesornombre, String asesornombreapellido, int asesornumeroDNI,
+			String asesorncorreoAsesor, String asesorncontraseñaAsesor, Especialidad especialidad) {
 		super();
 		this.idAsesor = idAsesor;
-		this.nombreAsesor = nombreAsesor;
-		this.apellidoAsesor = apellidoAsesor;
-		this.numeroDNI = numeroDNI;
-		this.correoAsesor = correoAsesor;
-		this.contraseñaAsesor = contraseñaAsesor;
+		this.asesornombre = asesornombre;
+		this.asesornombreapellido = asesornombreapellido;
+		this.asesornumeroDNI = asesornumeroDNI;
+		this.asesorncorreoAsesor = asesorncorreoAsesor;
+		this.asesorncontraseñaAsesor = asesorncontraseñaAsesor;
 		this.especialidad = especialidad;
 	}
 
-	
+
+
+
 	public int getIdAsesor() {
 		return idAsesor;
 	}
+
+
+
 
 	public void setIdAsesor(int idAsesor) {
 		this.idAsesor = idAsesor;
 	}
 
-	public String getNombreAsesor() {
-		return nombreAsesor;
+
+
+
+	public String getAsesornombre() {
+		return asesornombre;
 	}
 
-	public void setNombreAsesor(String nombreAsesor) {
-		this.nombreAsesor = nombreAsesor;
+
+
+
+	public void setAsesornombre(String asesornombre) {
+		this.asesornombre = asesornombre;
 	}
 
-	public String getApellidoAsesor() {
-		return apellidoAsesor;
+
+
+
+	public String getAsesornombreapellido() {
+		return asesornombreapellido;
 	}
 
-	public void setApellidoAsesor(String apellidoAsesor) {
-		this.apellidoAsesor = apellidoAsesor;
-	}
-	
-	public int getNumeroDNI() {
-		return numeroDNI;
+
+
+
+	public void setAsesornombreapellido(String asesornombreapellido) {
+		this.asesornombreapellido = asesornombreapellido;
 	}
 
-	public void setNumeroDNI(int numeroDNI) {
-		this.numeroDNI = numeroDNI;
+
+
+
+	public int getAsesornumeroDNI() {
+		return asesornumeroDNI;
 	}
 
-	public String getCorreoAsesor() {
-		return correoAsesor;
+
+
+
+	public void setAsesornumeroDNI(int asesornumeroDNI) {
+		this.asesornumeroDNI = asesornumeroDNI;
 	}
 
-	public void setCorreoAsesor(String correoAsesor) {
-		this.correoAsesor = correoAsesor;
-	}
-	
-	public String getContraseñaAsesor() {
-		return contraseñaAsesor;
+
+
+
+	public String getAsesorncorreoAsesor() {
+		return asesorncorreoAsesor;
 	}
 
-	public void setContraseñaAsesor(String contraseñaAsesor) {
-		this.correoAsesor = contraseñaAsesor;
+
+
+
+	public void setAsesorncorreoAsesor(String asesorncorreoAsesor) {
+		this.asesorncorreoAsesor = asesorncorreoAsesor;
 	}
-	
+
+
+
+
+	public String getAsesorncontraseñaAsesor() {
+		return asesorncontraseñaAsesor;
+	}
+
+
+
+
+	public void setAsesorncontraseñaAsesor(String asesorncontraseñaAsesor) {
+		this.asesorncontraseñaAsesor = asesorncontraseñaAsesor;
+	}
+
+
+
+
 	public Especialidad getEspecialidad() {
 		return especialidad;
 	}
 
+
+
+
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
 	}
+
+
+
+
 }

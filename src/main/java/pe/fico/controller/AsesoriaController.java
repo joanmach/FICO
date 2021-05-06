@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import pe.fico.entity.Asesoria;
 import pe.fico.entity.Asesor;
 import pe.fico.service.IAsesoriaService;
 import pe.fico.service.IAsesorService;
+
+@Named
+@RequestScoped
 
 public class AsesoriaController implements Serializable{
 	

@@ -41,14 +41,17 @@
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{cli.idCliente}">
-								<h:outputText value="#{cli.idCliente}" />
+							<p:column headerText="Id" sortBy="#{cli.CCliente}">
+								<h:outputText value="#{cli.CCliente}" />
 							</p:column>
-							<p:column headerText="DNI" sortBy="#{cli.numeroDNI}">
-								<h:outputText value="#{cli.numeroDNI}" />
+							<p:column headerText="DNI" sortBy="#{cli.clientenumeroDNI}">
+								<h:outputText value="#{cli.clientenumeroDNI}" />
 							</p:column>
-							<p:column headerText="Nombre" sortBy="#{cli.nombreCliente}">
-								<h:outputText value="#{cli.nombreCliente}" />
+							<p:column headerText="Nombre" sortBy="#{cli.clientenombreCliente}">
+								<h:outputText value="#{cli.clientenombreCliente}" />
+							</p:column>
+							<p:column headerText="apellido" sortBy="#{cli.clientenombreapellidoCliente}">
+								<h:outputText value="#{cli.clientenombreapellidoCliente}" />
 							</p:column>
 							
 							<p:column headerText="Ciudad" sortBy= "#{cli.ciudad.nombreCiudad}">
@@ -58,8 +61,8 @@
 								<h:outputText value="#{cli.ciudad.pais.nombrePais}" />
 							</p:column>
 							
-							<p:column headerText="Fecha de Nacimiento" sortBy="#{cli.fechaNacCliente}">
-								<h:outputText value="#{cli.fechaNacCliente}">
+							<p:column headerText="Fecha de Nacimiento" sortBy="#{cli.clientefechaNacCliente}">
+								<h:outputText value="#{cli.clientefechaNacCliente}">
 									<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
 								</h:outputText>
 							</p:column>

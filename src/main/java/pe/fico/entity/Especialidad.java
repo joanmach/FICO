@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Especialidad")
+@Table(name="Especialidadessss")
 
 public class Especialidad implements Serializable{
 private static final long serialVersionUID = 1L;
@@ -22,21 +22,21 @@ private static final long serialVersionUID = 1L;
 	@Column(name="nombreEspecialidad", nullable=false, length=20)
 	private String nombreEspecialidad;
 	
-	@Column(name="Descripcion", nullable=false, length=50)
-	private String Descripcion;
+	@Column(name="TDescripcion", nullable=false, length=50)
+	private String TDescripcion;
 	
 	public Especialidad() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Especialidad(int idEspecialidad, String nombreEspecialidad, String descripcion) {
+	public Especialidad(int idEspecialidad, String nombreEspecialidad, String tDescripcion) {
 		super();
 		this.idEspecialidad = idEspecialidad;
 		this.nombreEspecialidad = nombreEspecialidad;
-		Descripcion = descripcion;
+		TDescripcion = tDescripcion;
 	}
-	
+
 	public int getIdEspecialidad() {
 		return idEspecialidad;
 	}
@@ -45,27 +45,27 @@ private static final long serialVersionUID = 1L;
 		this.idEspecialidad = idEspecialidad;
 	}
 
-	public String getnombreEspecialidad() {
+	public String getNombreEspecialidad() {
 		return nombreEspecialidad;
 	}
 
 	public void setNombreEspecialidad(String nombreEspecialidad) {
 		this.nombreEspecialidad = nombreEspecialidad;
 	}
-	
-	public String getDescripcion() {
-		return Descripcion;
+
+	public String getTDescripcion() {
+		return TDescripcion;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.Descripcion = descripcion;
+	public void setTDescripcion(String tDescripcion) {
+		TDescripcion = tDescripcion;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Descripcion == null) ? 0 : Descripcion.hashCode());
+		result = prime * result + ((TDescripcion == null) ? 0 : TDescripcion.hashCode());
 		result = prime * result + idEspecialidad;
 		result = prime * result + ((nombreEspecialidad == null) ? 0 : nombreEspecialidad.hashCode());
 		return result;
@@ -80,10 +80,10 @@ private static final long serialVersionUID = 1L;
 		if (getClass() != obj.getClass())
 			return false;
 		Especialidad other = (Especialidad) obj;
-		if (Descripcion == null) {
-			if (other.Descripcion != null)
+		if (TDescripcion == null) {
+			if (other.TDescripcion != null)
 				return false;
-		} else if (!Descripcion.equals(other.Descripcion))
+		} else if (!TDescripcion.equals(other.TDescripcion))
 			return false;
 		if (idEspecialidad != other.idEspecialidad)
 			return false;
@@ -94,6 +94,7 @@ private static final long serialVersionUID = 1L;
 			return false;
 		return true;
 	}
+
 	
 	
 }
