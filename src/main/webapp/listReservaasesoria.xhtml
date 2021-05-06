@@ -1,63 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+
+<html 	
+	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
-
-<ui:composition template="master.xhtml">
-
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+		
+<ui:composition template="masterasesor.xhtml"> 
+	
 	<ui:define name="title">
-        .:Reserva de Asesoria:.
-    </ui:define>
-
-	<ui:define name="titleCont">
-		<span>Eliga entre los diferentes horarios</span>
+		.:Listado de Reservas:.
 	</ui:define>
-
+	
+	<ui:define name="titleCont">
+		<span>Reservas</span>
+	</ui:define>
+	
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="idAsesor" value="Id " styleClass="control-label" />
-
-			 <p:inputText autocomplete="off" id="idAsesor"
-				styleClass="form-control" value="#{asesorController.asesor.idAsesor}"
-				required="true" /> 
-				
-			<h:outputLabel for="cboAsesoria" value="Asesoria "/>
-			
-			<p:selectOneMenu id="cboAsesoria" value="#{reservaController.reserva.asesoria}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.listaAsesorias}" var="a"
-				 itemLabel="#{a.nombreAsesoria}" itemValue="#{a}"/>
-				</p:selectOneMenu>
-<br />
-			<h:outputLabel for="cboHorario" value="Horarios "/>
-			
-			<p:selectOneMenu id="cboHorario" value="#{reservaController.reserva.asesoria.horarioasesoria.horario}"
-				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.listaHorarios}" var="h"
-				 itemLabel="#{h.fechainicioHorario}" itemValue="#{h}"/>
-				</p:selectOneMenu>
-				
-			<br />
-			<br />
-
-			<p:commandButton value="Inscribirse"
-				actionListener="#{asesorController.insertar()}"
-				styleClass="btn btn-primary " update="@form"
-				action="listAsesor?faces-redirect=true" />
-			<p:commandButton value="Atras"
-				action="listAsesor?faces-redirect=true" immediate="true"
-				styleClass="btn btn-default" ajax="false" />
-
-			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-
-		</h:form>
 		
-	</ui:define>
+			<div class="row">
+				<div class="col-sm-8 text-right">
+					<div class="form-group box-main-btn">
+						<span style="display: block; height:30px;"></span>
+						<p:commandButton value="Nuevo"						
+							action="#{reservaController.nuevaReserva()}"
+							styleClass="btn btn-primary ajax=false" />
+					</div>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="listReservaasesoria" var="r"
+							value="#{reservaController.listaReservas}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen Reservas" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{r.idReserva}">
+								<h:outputText value="#{r.idReserva}" />
+							</p:column>
+
+							<p:column headerText="Nombre Asesoria" sortBy="#{r.asesoria.nombreAsesoria}">
+								<h:outputText value="#{r.asesoria.nombreAsesoria}" />
+							</p:column>
+							
+							<p:column headerText="Precio Asesoria" sortBy="#{r.asesoria.precioAsesoria}">
+								<h:outputText value="#{r.asesoria.precioAsesoria}" />
+							</p:column>
+							
+							<p:column headerText="Nombre Cliente" sortBy="#{r.cliente.clientenombreCliente}">
+								<h:outputText value="#{r.cliente.clientenombreCliente}" />
+							</p:column>
+							
+							<p:column headerText="Apellido Cliente" sortBy="#{r.cliente.clientenombreapellidoCliente}">
+								<h:outputText value="#{r.cliente.clientenombreapellidoCliente}" />
+							</p:column>
+							
+										
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listReservaasesoria" value="Eliminar"
+									actionListener="#{reservaController.eliminarReserva(r)}" />
+							</p:column>
+
+						</p:dataTable>
+					</div>
+				</div>				
+			</div>									
+		</h:form>
+	</ui:define>
+	
 	<ui:define name="footerCont">
-
 	</ui:define>
-</ui:composition>
+		
+</ui:composition> 
 </html>
+ 
