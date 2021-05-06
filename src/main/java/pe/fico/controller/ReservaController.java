@@ -93,21 +93,17 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	public void listaAsesorias() {
-		try {
+	
 			listaAsesorias = aService.listar();
-		} 
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
+		
 	}
 	
 	public void listaClientes() {
-		try {
+		
 			listaClientes= cService.listar();
-		} 
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		
+		
 	}
 	
 	public void eliminarReserva(Reserva r) {
@@ -167,7 +163,8 @@ private static final long serialVersionUID = 1L;
 	public void setListaAsesorias(List<Asesoria> listaAsesorias) {
 		this.listaAsesorias = listaAsesorias;
 	}
-	
+
+
 	
 	
 

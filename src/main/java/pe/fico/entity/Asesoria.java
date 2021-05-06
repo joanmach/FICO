@@ -86,4 +86,47 @@ private static final long serialVersionUID = 1L;
 	public void setAsesor(Asesor asesor) {
 		this.asesor = asesor;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Descripcion == null) ? 0 : Descripcion.hashCode());
+		result = prime * result + ((asesor == null) ? 0 : asesor.hashCode());
+		result = prime * result + idAsesoria;
+		result = prime * result + ((nombreAsesoria == null) ? 0 : nombreAsesoria.hashCode());
+		result = prime * result + precioAsesoria;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Asesoria other = (Asesoria) obj;
+		if (Descripcion == null) {
+			if (other.Descripcion != null)
+				return false;
+		} else if (!Descripcion.equals(other.Descripcion))
+			return false;
+		if (asesor == null) {
+			if (other.asesor != null)
+				return false;
+		} else if (!asesor.equals(other.asesor))
+			return false;
+		if (idAsesoria != other.idAsesoria)
+			return false;
+		if (nombreAsesoria == null) {
+			if (other.nombreAsesoria != null)
+				return false;
+		} else if (!nombreAsesoria.equals(other.nombreAsesoria))
+			return false;
+		if (precioAsesoria != other.precioAsesoria)
+			return false;
+		return true;
+	}
 }

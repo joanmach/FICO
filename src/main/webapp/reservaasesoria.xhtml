@@ -26,14 +26,13 @@
 			<h:outputLabel for="cboAsesoria" value="Asesoria "/>
 			<p:selectOneMenu id="cboAsesoria" value="#{reservaController.reserva.asesoria}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{reservaController.listaAsesorias}" var="d"
-				 itemLabel="#{d.nombreAsesoria} #{d.precioAsesoria} " itemValue="#{d}"/>
+				<f:selectItems value="#{reservaController.listaAsesorias}" var="a"
+				 itemLabel="#{a.nombreAsesoria}" itemValue="#{a}"/>
 				</p:selectOneMenu>
 
             <br />	
 			<br />
 				<h:outputLabel for="cboCliente" value="Cliente "/>
-			
 			<p:selectOneMenu id="cboCliente" value="#{reservaController.reserva.cliente}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{reservaController.listaClientes}" var="c"
