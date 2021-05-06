@@ -16,7 +16,6 @@ import pe.fico.service.IAsesorService;
 
 @Named
 @RequestScoped
-
 public class AsesoriaController implements Serializable{
 	
 private static final long serialVersionUID = 1L;
@@ -45,6 +44,7 @@ private static final long serialVersionUID = 1L;
 	
 	public String nuevaAsesoria() {
 		this.setAsesoria(new Asesoria());
+		listaAsesores=mService.listar();
 		return "asesoria.xhtml";
 	}
 	

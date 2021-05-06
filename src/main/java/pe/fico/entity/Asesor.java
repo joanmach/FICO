@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Asesoressss")
+@Table(name="Asesor")
 public class Asesor implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -156,6 +156,67 @@ public class Asesor implements Serializable{
 
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
+	}
+
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((asesorncontraseñaAsesor == null) ? 0 : asesorncontraseñaAsesor.hashCode());
+		result = prime * result + ((asesorncorreoAsesor == null) ? 0 : asesorncorreoAsesor.hashCode());
+		result = prime * result + ((asesornombre == null) ? 0 : asesornombre.hashCode());
+		result = prime * result + ((asesornombreapellido == null) ? 0 : asesornombreapellido.hashCode());
+		result = prime * result + asesornumeroDNI;
+		result = prime * result + ((especialidad == null) ? 0 : especialidad.hashCode());
+		result = prime * result + idAsesor;
+		return result;
+	}
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Asesor other = (Asesor) obj;
+		if (asesorncontraseñaAsesor == null) {
+			if (other.asesorncontraseñaAsesor != null)
+				return false;
+		} else if (!asesorncontraseñaAsesor.equals(other.asesorncontraseñaAsesor))
+			return false;
+		if (asesorncorreoAsesor == null) {
+			if (other.asesorncorreoAsesor != null)
+				return false;
+		} else if (!asesorncorreoAsesor.equals(other.asesorncorreoAsesor))
+			return false;
+		if (asesornombre == null) {
+			if (other.asesornombre != null)
+				return false;
+		} else if (!asesornombre.equals(other.asesornombre))
+			return false;
+		if (asesornombreapellido == null) {
+			if (other.asesornombreapellido != null)
+				return false;
+		} else if (!asesornombreapellido.equals(other.asesornombreapellido))
+			return false;
+		if (asesornumeroDNI != other.asesornumeroDNI)
+			return false;
+		if (especialidad == null) {
+			if (other.especialidad != null)
+				return false;
+		} else if (!especialidad.equals(other.especialidad))
+			return false;
+		if (idAsesor != other.idAsesor)
+			return false;
+		return true;
 	}
 
 

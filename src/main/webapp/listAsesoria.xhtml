@@ -34,33 +34,41 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="listAsesoria" var="as"
+						<p:dataTable id="listAsesoria" var="ases"
 							value="#{asesoriaController.listaAsesorias}" paginator="true"
 							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen Asesorias" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{as.idAsesoria}">
-								<h:outputText value="#{as.idAsesoria}" />
+							<p:column headerText="Id" sortBy="#{ases.idAsesoria}">
+								<h:outputText value="#{ases.idAsesoria}" />
 							</p:column>
 
-							<p:column headerText="Nombre" sortBy="#{as.nombreAsesoria}">
-								<h:outputText value="#{as.nombreAsesoria}" />
+							<p:column headerText="Nombre" sortBy="#{ases.nombreAsesoria}">
+								<h:outputText value="#{ases.nombreAsesoria}" />
 							</p:column>
 							
-							<p:column headerText="Precio Asesoria" sortBy="#{as.precioAsesoria}">
-								<h:outputText value="#{as.precioAsesoria}" />
+							<p:column headerText="Precio Asesoria" sortBy="#{ases.precioAsesoria}">
+								<h:outputText value="#{ases.precioAsesoria}" />
 							</p:column>
 							
-							<p:column headerText="Descripcion" sortBy="#{as.descripcion}">
-								<h:outputText value="#{as.descripcion}" />
+							<p:column headerText="Descripcion" sortBy="#{ases.descripcion}">
+								<h:outputText value="#{ases.descripcion}" />
 							</p:column>
 							
+							<p:column headerText="asesor nombre" sortBy="#{ases.asesor.asesornombre}">
+								<h:outputText value="#{ases.asesor.asesornombre}" />
+							</p:column>
 							
+							<p:column headerText="asesor apellido" sortBy="#{ases.asesor.asesornombreapellido}">
+								<h:outputText value="#{ases.asesor.asesornombreapellido}" />
+							</p:column>
+							
+										
 							<p:column headerText="Operación" exportable="false">
 								<h:commandLink action="listAsesoria" value="Eliminar"
-									actionListener="#{asesoriaController.eliminar(as)}" />
+									actionListener="#{asesoriaController.eliminar(ases)}" />
 							</p:column>
 
 						</p:dataTable>

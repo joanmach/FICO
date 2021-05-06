@@ -5,7 +5,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<ui:composition template="master.xhtml">
+<ui:composition template="masterasesor.xhtml">
 
 	<ui:define name="title">
         .:Registro de Asesor:.
@@ -28,7 +28,7 @@
 			
 			<p:inputText autocomplete="off" id="nombreAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.nombreAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesornombre}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="apellidoAsesor" value="Apellido "
@@ -36,7 +36,7 @@
 			
 			<p:inputText autocomplete="off" id="apellidoAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.apellidoAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesornombreapellido}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="numeroDNI" value="DNI "
@@ -44,26 +44,26 @@
 			
 			<p:inputText autocomplete="off" id="numeroDNI"
 				styleClass="form-control"
-				value="#{asesorController.asesor.numeroDNI}" maxlength="8"
+				value="#{asesorController.asesor.asesornumeroDNI}" maxlength="8"
 				required="true" />
-<br />
-				
+						
 			<h:outputLabel for="correoAsesor" value="Correo electronico "
 				styleClass="control-label" />
 			
 			<p:inputText autocomplete="off"  id="correoAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.correoAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesorncorreoAsesor}" maxlength="30"
 				required="true" />
 				
 			<h:outputLabel for="contraseñaAsesor" value="Contraseña "
 				styleClass="control-label" />
 			
-			<p:inputText autocomplete="off" type="password" id="contraseñaAsesor"
+			<p:inputText autocomplete="off" id="contraseñaAsesor"
 				styleClass="form-control"
-				value="#{asesorController.asesor.contraseñaAsesor}" maxlength="30"
+				value="#{asesorController.asesor.asesorncontraseñaAsesor}" maxlength="30"
 				required="true" />
-				
+				<br />
+			
 			<h:outputLabel for="cboEspecialidad" value="Especialidad "/>
 			
 			<p:selectOneMenu id="cboEspecialidad" value="#{asesorController.asesor.especialidad}"
@@ -87,14 +87,6 @@
 
 		</h:form>
 		
-		<h:form>
-		<p>¿Por que registrarse?</p>
-		Finance Companion te ofrece distintos tipos de beneficios:
-		<li> Asesorias con profesionales y especialistas ☺</li>
-		<li> Clases pre-grabadas para ver en cualquier momento ◄►</li>
-		<li> Sistema de progresos para monitorear tus metas financieras ↑↑</li>
-	
-		</h:form>
 		
 	</ui:define>
 

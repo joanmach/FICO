@@ -61,7 +61,7 @@ private static final long serialVersionUID = -3351318371418292111L;
 		this.setReserva(new Reserva());
 		listaAsesorias=aService.listar();
 		listaClientes=cService.listar();
-		return "reserva.xhtml";
+		return "reservaasesoria.xhtml";
 	}
 	
 	public void insertar() {

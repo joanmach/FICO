@@ -43,8 +43,9 @@ private static final long serialVersionUID = 1L;
 		this.listar();
 	}
 	
-	public String nuevaAsesor() {
+	public String nuevoAsesor() {
 		this.setAsesor(new Asesor());
+		listaEspecialidades=pService.listar();
 		return "asesor.xhtml";
 	}
 	

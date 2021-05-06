@@ -7,7 +7,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 		
-<ui:composition template="master.xhtml"> 
+<ui:composition template="masterasesor.xhtml"> 
 	
 	<ui:define name="title">
 		.:CREA TU CUENTA:.
@@ -44,17 +44,20 @@
 							<p:column headerText="Id" sortBy="#{ase.idAsesor}">
 								<h:outputText value="#{ase.idAsesor}" />
 							</p:column>
-							<p:column headerText="Nombre" sortBy="#{ase.nombreAsesor}">
-								<h:outputText value="#{ase.nombreAsesor}" />
+							<p:column headerText="Nombre" sortBy="#{ase.asesornombre}">
+								<h:outputText value="#{ase.asesornombre}" />
 							</p:column>
-							<p:column headerText="Apellido" sortBy="#{ase.apellidoAsesor}">
-								<h:outputText value="#{ase.apellidoAsesor}" />
+							<p:column headerText="Apellido" sortBy="#{ase.asesornombreapellido}">
+								<h:outputText value="#{ase.asesornombreapellido}" />
 							</p:column>
-							<p:column headerText="DNI" sortBy="#{ase.numeroDNI}">
-								<h:outputText value="#{ase.numeroDNI}" />
+							<p:column headerText="DNI" sortBy="#{ase.asesornumeroDNI}">
+								<h:outputText value="#{ase.asesornumeroDNI}" />
 							</p:column>
-							<p:column headerText="Correo" sortBy= "#{ase.correoAsesor}">
-								<h:outputText value="#{ase.correoAsesor}" />
+							<p:column headerText="Correo" sortBy= "#{ase.asesorncorreoAsesor}">
+								<h:outputText value="#{ase.asesorncorreoAsesor}" />
+							</p:column>
+							<p:column headerText="Contraseña" sortBy= "#{ase.asesorncontraseñaAsesor}">
+								<h:outputText value="#{ase.asesorncontraseñaAsesor}" />
 							</p:column>
 							<p:column headerText="Especialidad" sortBy= "#{ase.especialidad.nombreEspecialidad}">
 								<h:outputText value="#{ase.especialidad.nombreEspecialidad}" />

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="masterasesor.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Asesoria:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Registrar asesoria</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idAsesoria" value="Id " styleClass="control-label" />
+
+			 <p:inputText autocomplete="off" id="idAsesoria"
+				styleClass="form-control" value="#{asesoriaController.asesoria.idAsesoria}"
+				required="true" /> 
+				
+			<h:outputLabel for="nombreAsesoria" value="Nombre asesoria "
+				styleClass="control-label" />
+			
+			<p:inputText autocomplete="off" id="nombreAsesoria"
+				styleClass="form-control"
+				value="#{asesoriaController.asesoria.nombreAsesoria}" maxlength="20"
+				required="true" />
+				
+			<h:outputLabel for="Descripcion" value="Descripcion "
+				styleClass="control-label" />
+			
+			<p:inputText autocomplete="off" id="Descripcion"
+				styleClass="form-control"
+				value="#{asesoriaController.asesoria.descripcion}" maxlength="50"
+				required="true" />
+				
+			<h:outputLabel for="Precio" value="Precio "
+				styleClass="control-label" />
+			
+			<p:inputText autocomplete="off" id="Precio"
+				styleClass="form-control"
+				value="#{asesoriaController.asesoria.precioAsesoria}" maxlength="10"
+				required="true" />
+<br />
+	
+			<h:outputLabel for="cboAsesor" value="Asesor "/>
+			<p:selectOneMenu id="cboAsesor" value="#{asesoriaController.asesoria.asesor}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{asesoriaController.listaAsesores}" var="a"
+				 itemLabel="#{a.asesornombre} #{a.asesornombreapellido}" itemValue="#{a}"/>
+				</p:selectOneMenu>
+				
+			<br />
+			<br />
+
+			<p:commandButton value="Registrarse"
+				actionListener="#{asesoriaController.insertar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listAsesoria?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listAsesoria?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+		
+		
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -82,7 +82,7 @@ public class ClienteController implements Serializable{
 	public void eliminar(Cliente cliente) {
 		
 		try {
-		mService.eliminar(cliente.getIdCliente());
+		mService.eliminar(cliente.getCCliente());
 		this.listarCliente();
 			}
 			catch(Exception ex) {
@@ -121,6 +121,7 @@ public class ClienteController implements Serializable{
 	public void setListaCiudades(List<Ciudad> listaCiudades) {
 		this.listaCiudades = listaCiudades;
 	}
+
 	
 
 }
