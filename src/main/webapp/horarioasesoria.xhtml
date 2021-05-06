@@ -28,15 +28,15 @@
 				value="#{horarioAsesoriaController.horarioasesoria.horario}"
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{horarioAsesoriaController.listaHorarios}" var="ho"
-					itemLabel="#{ho.DFechaInicio}" itemValue="#{ho}" />
+					itemLabel="#{ho.DFechaInicio} #{ho.DFechaFin}" itemValue="#{ho}" />
 			</p:selectOneMenu>	
 				
 			<p:outputLabel for="idAsesoria" value="Asesoria" />
 			<p:selectOneMenu id="idAsesoria"
 				value="#{horarioAsesoriaController.horarioasesoria.asesoria}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{horarioAsesoriaController.listaAsesorias}" var="as"
-					itemLabel="#{as.nombreAsesoria}" itemValue="#{as}" />
+				<f:selectItems value="#{horarioAsesoriaController.listaAsesorias}" var="ase"
+					itemLabel="#{ase.nombreAsesoria}" itemValue="#{ase}" />
 			</p:selectOneMenu>		
 				
 				
