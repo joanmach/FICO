@@ -4,7 +4,7 @@
 
 	<persistence-unit name="a" transaction-type="JTA">
 
-		<jta-data-source>java:jboss/datasources/zs6aDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/ficoDS</jta-data-source>
 
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
